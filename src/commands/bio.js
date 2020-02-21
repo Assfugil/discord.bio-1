@@ -23,9 +23,9 @@ module.exports.run = async function (client, message, args) {
 	const embed = new RichEmbed()
 		.setTitle(`${target.tag}'s Profile`)
 		.setColor(Colors.DEFAULT)
-		.addField("User", `${slug}\n<:Shout:680483855622340636> **Status:** ${targetBio.status || "None Provided"}\n<:Description:680483882688184355> **Description:** ${targetBio.description || "None Provided"}`, true)
-		.addField("Details", `**Location:** ${targetBio.upvotes || "None Provided"}\n**Gender:** ${targetBio.gender || "None Provided"}\n**Birthday:** ${targetBio.birthday || "None Provided"}\n**Occupation:** ${targetBio.occupation || "None Provided"}\n**Email:** ${targetBio.email || "None Provided"}\n**Website:** ${targetBio.website || "None Provided"}`)
-		.addField("Statistics", `<:upvote:680483831769595961> **Upvotes:** ${targetBio.upvotes}\n<:View:680484522311155722> **View Count:** Unavailable`)
+		.addField(":person_facepalming: User", `${slug}\n**Status:** ${targetBio.status || "None Provided"}\n**Description:** ${targetBio.description || "None Provided"}`, true)
+		.addField(":information_source: Details", `**Location:** ${targetBio.upvotes || "None Provided"}\n**Gender:** ${targetBio.gender || "None Provided"}\n**Birthday:** ${targetBio.birthday || "None Provided"}\n**Occupation:** ${targetBio.occupation || "None Provided"}\n**Email:** ${targetBio.email || "None Provided"}\n**Website:** ${targetBio.website || "None Provided"}`)
+		.addField("<:upvote:680483831769595961> Statistics", `**Upvotes:** ${targetBio.upvotes}\n**View Count:** Unavailable`)
 		.addField("<:Link:680484762099646566> Connections", targetConnections)
 		.setFooter("Don't have a bio yet? Sign up at https://discord.bio/");
 
