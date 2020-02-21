@@ -1,0 +1,16 @@
+{
+  "name": "discord.bio-bot",
+  "version": "1.0.0",
+  "description": "Create your very own profile [here](https://discord.bio)!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.bio": "^2.0.0-beta4",
+    "discord.js": "^11.5.1",
+    "dotenv": "^8.2.0"
+  }
+}
