@@ -1,17 +1,15 @@
 const { RichEmbed } = require("discord.js");
+const { fuzzy } = require("../util/packages/Functions")
 const { Colors } = require("../config");
 const Bio = require("discord.bio");
 const bio = new Bio();
 
 module.exports.run = async function (client, message, args) {
-	let target = message.mentions.users.first();
-	if (!target) {
-		target = message.author
-	};
+	let target = message.guild.members.find(m => fuzzy(args.join(' ').toLowerCase(), member.user.tag.toLowerCase())) || message.member;
 
 	let tBio = await bio.fetchUserDetails(target.id);
-	let targetBio = tBio.settings;
-	if (!tBio) return message.channel.send("It seems that you or the targeted user do not yet have a profile. Sign up and get your own at https://discord.bio");
+		if (!tBio) return message.channel.send("It seems that you or the targeted user do not yet have a profile. Sign up and get your own at https://discord.bio");
+		let targetBio = tBio.settings;
 
 	let targetConnections = await bio.fetchUserConnections(target.id);
 
@@ -25,7 +23,7 @@ module.exports.run = async function (client, message, args) {
 
 	let slug = `[${targetBio.name}](https://dsc.bio/${targetBio.name}/)`
 	if (targetBio.verified === true) {
-		slug = `[${targetBio.name}](https://dsc.bio/${targetBio.name}/) <:booleanverified:680217203014238279>`
+		slug =+ " <:booleanverified:680217203014238279>"
 	};
 
 	const embed = new RichEmbed()

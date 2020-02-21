@@ -7,6 +7,7 @@ module.exports.run = async (client, message, args) => {
 		.setColor(Colors.DEFAULT)
 		.setDescription("Don't have discord.bio yet? Sign up [here](https://discord.bio)")
 		.addField("!help", "Sends an embed with a list of commands")
+		.addField("!info", "Sends an embed with the bot invite, repository, and stats")
 		.addField("!bio [@user]", "Sends an embed with the bio of the author or the user provided");
 
 	message.channel.send(embed);
