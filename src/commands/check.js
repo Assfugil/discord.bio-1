@@ -8,10 +8,10 @@ module.exports.run = async function (client, message, args) {
 	let target = args[0];
 	if (!target) return message.channel.send("You must provide a slug to check.")
 	let tBio = await bio.fetchUserDetails(target);
-	if (!tBio.success === 1) return message.channel.send(new RichEmbed().setDescription("<:available:680486631484162056> The provided slug is **available**."));
+	if (!tBio.success === 1) return message.channel.send(new RichEmbed().setColor(Colors.SUCCESS).setTitle("<:available:680486631484162056> The provided slug is **available**."));
 
 	let user = await client.fetchUser(tBio.settings.user_id);
-	return message.channel.send(new RichEmbed().setDescription(`<:taken:680486604711788577> The provided slug is **taken** by **${user.tag}**.`));
+	return message.channel.send(new RichEmbed().setColor(Colors.FAILED).setTitle(`<:taken:680486604711788577> The provided slug is **taken** by **${user.tag}**.`));
 };
 
 module.exports.data = {
