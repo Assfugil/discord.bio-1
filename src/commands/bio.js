@@ -12,6 +12,7 @@ module.exports.run = async function (client, message, args) {
 		let targetBio = tBio.settings;
 
 	let targetConnections = await bio.fetchUserConnections(target.id);
+	console.log(targetConnections);
 
 	let connections;
 	if (targetConnections.size >= 1) {
