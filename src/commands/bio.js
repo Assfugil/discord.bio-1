@@ -14,15 +14,6 @@ module.exports.run = async function (client, message, args) {
 
 	let tconnections = await bio.fetchUserConnections(target.id);
 	let targetConnections = targetConnections.settings;
-	console.log(targetConnections);
-
-	let connections;
-	if (targetConnections.size >= 1) {
-		connections = targetConnections.map(c=>c.name.toString() + ": " + (c=>c.value.toString())).join('');
-	}
-	else {
-		connections = 'None';
-	}
 
 	let slug = `[${targetBio.name}](https://dsc.bio/${targetBio.name}/)`
 	if (targetBio.verified === true) {
@@ -35,7 +26,7 @@ module.exports.run = async function (client, message, args) {
 		.addField("Slug", slug, true)
 		.addField("Details", `**Status:** ${targetBio.status || "None Provided"}\n**Description:** ${targetBio.description || "None Provided"}\n**Location:** ${targetBio.upvotes || "None Provided"}\n**Gender:** ${targetBio.gender || "None Provided"}\n**Birthday:** ${targetBio.birthday || "None Provided"}\n**Occupation:** ${targetBio.occupation || "None Provided"}\n**Email:** ${targetBio.email || "None Provided"}\n**Website:** ${targetBio.website || "None Provided"}`)
 		.addField("Statistics", `**Upvotes:** ${targetBio.upvotes}\n**View Count:** Unavailable`)
-		.addField("Connections", connections)
+		.addField("Connections", `Soon`)
 		.setFooter("Don't have a bio yet? Sign up at https://discord.bio/");
 
 	message.channel.send(embed);
