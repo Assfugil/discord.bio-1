@@ -13,7 +13,7 @@ module.exports.run = async function (client, message, args) {
 	console.log(targetBio);
 
 	let tconnections = await bio.fetchUserConnections(target.id);
-	let targetConnections = targetConnections.settings;
+	let targetConnections = tConnections.settings;
 
 	let slug = `[${targetBio.name}](https://dsc.bio/${targetBio.name}/)`
 	if (targetBio.verified === true) {
