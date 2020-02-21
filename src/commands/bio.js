@@ -13,7 +13,7 @@ module.exports.run = async function (client, message, args) {
 	let targetBio = tBio.settings;
 
 	let tconnections = await bio.fetchUserConnections(target.id);
-	let targetConnections = `GitHub: [${tconnections.settings.github.name || "Not Linked"}](https://github.com/${tconnections.settings.github.name}), Website: [${tconnections.settings.website.name || "Not Linked"}](${tconnections.settings.website.name}), Instagram: [${tconnections.settings.instagram.name || "Not Linked"}](https://instagram.com/${tconnections.settings.instagram.name}), Snapchat: ${tconnections.settings.snapchat.name || "Not Linked"}, LinkedIn: [${tconnections.settings.linkedin.name || "Not Linked"}](https://linkedin.com/${tconnections.settings.linkedin.name})`
+	let targetConnections = `GitHub: [${tconnections.github.name || "Not Linked"}](https://github.com/${tconnections.github.name}), Website: [${tconnections.website.name || "Not Linked"}](${tconnections.website.name}), Instagram: [${tconnections.instagram.name || "Not Linked"}](https://instagram.com/${tconnections.instagram.name}), Snapchat: ${tconnections.snapchat.name || "Not Linked"}, LinkedIn: [${tconnections.linkedin.name || "Not Linked"}](https://linkedin.com/${tconnections.linkedin.name})`
 
 	let slug = `[${targetBio.name}](https://dsc.bio/${targetBio.name}/)`
 	if (targetBio.verified === true) {
