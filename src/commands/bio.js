@@ -5,7 +5,8 @@ const Bio = require("discord.bio");
 const bio = new Bio();
 
 module.exports.run = async function (client, message, args) {
-	let target = message.guild.members.find(m => fuzzy(args[0], m.user.tag.toLowerCase() + "~>" + m.id)) || message.member;
+	let target = message.mentions.users.first();
+        if (!target) { target = message.author };
 
 	let tBio = await bio.fetchUserDetails(target.id);
 	if (!tBio) return message.channel.send("It seems that you or the targeted user do not yet have a profile. Sign up and get your own at https://discord.bio");
