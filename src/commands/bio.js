@@ -5,11 +5,11 @@ const Bio = require("discord.bio");
 const bio = new Bio();
 
 module.exports.run = async function (client, message, args) {
-	let target = message.guild.members.find(m => fuzzy(args.join(' ').toLowerCase(), member.user.tag.toLowerCase())) || message.member;
+	let target = message.guild.members.find(m => fuzzy(args.join(' ').toLowerCase(), member.user.tag.toLowerCase())) || message.author;
 
 	let tBio = await bio.fetchUserDetails(target.id);
-		if (!tBio) return message.channel.send("It seems that you or the targeted user do not yet have a profile. Sign up and get your own at https://discord.bio");
-		let targetBio = tBio.settings;
+	if (!tBio) return message.channel.send("It seems that you or the targeted user do not yet have a profile. Sign up and get your own at https://discord.bio");
+	let targetBio = tBio.settings;
 
 	let targetConnections = await bio.fetchUserConnections(target.id);
 
