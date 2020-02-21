@@ -12,7 +12,7 @@ module.exports.run = async function (client, message, args) {
 	if (!tBio) return message.channel.send("It seems that you or the targeted user do not yet have a profile. Sign up and get your own at https://discord.bio");
 	let targetBio = tBio.settings;
 
-	let tconnections = await bio.fetchUserConnections(target.id);
+	let tConnections = await bio.fetchUserConnections(target.id);
 	let targetConnections = tConnections.settings;
 
 	let slug = `[${targetBio.name}](https://dsc.bio/${targetBio.name}/)`
