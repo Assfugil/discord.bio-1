@@ -10,8 +10,11 @@ module.exports.run = async function (client, message, args) {
 	let tBio = await bio.fetchUserDetails(target.id);
 	if (!tBio) return message.channel.send("It seems that you or the targeted user do not yet have a profile. Sign up and get your own at https://discord.bio");
 	let targetBio = tBio.settings;
+	console.log(targetBio);
 
-	let targetConnections = await bio.fetchUserConnections(target.id);
+	let tconnections = await bio.fetchUserConnections(target.id);
+	let targetConnections = targetConnections.settings;
+	console.log(targetConnections);
 
 	let connections;
 	if (targetConnections.size >= 1) {
