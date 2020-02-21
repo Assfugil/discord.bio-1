@@ -13,7 +13,7 @@ module.exports.run = async function (client, message, args) {
 	let targetBio = tBio.settings;
 
 	let tconnections = await bio.fetchUserConnections(target.id);
-	let targetConnections = `GitHub: [${tconnections.github.name || "Not Linked"}](https://github.com/${tconnections.github.name}), Website: [${tconnections.website.name || "Not Linked"}](${tconnections.website.name}), Instagram: [${tconnections.instagram.name || "Not Linked"}](https://instagram.com/${tconnections.instagram.name}), Snapchat: ${tconnections.snapchat.name || "Not Linked"}, LinkedIn: [${tconnections.linkedin.name || "Not Linked"}](https://linkedin.com/${tconnections.linkedin.name})`
+	let targetConnections = `GitHub: [${tconnections.github.name || "Not Linked"}](https://github.com/${tconnections.github.name}),\n Website: [${tconnections.website.name || "Not Linked"}](${tconnections.website.name}),\n Instagram: [${tconnections.instagram.name || "Not Linked"}](https://instagram.com/${tconnections.instagram.name}),\n Snapchat: ${tconnections.snapchat.name || "Not Linked"},\n LinkedIn: [${tconnections.linkedin.name || "Not Linked"}](https://linkedin.com/${tconnections.linkedin.name})`
 
 	let slug = `[${targetBio.name}](https://dsc.bio/${targetBio.name}/)`
 	if (targetBio.verified === true) {
@@ -23,7 +23,7 @@ module.exports.run = async function (client, message, args) {
 	const embed = new RichEmbed()
 		.setTitle(`${target.tag}'s Profile`)
 		.setColor(Colors.DEFAULT)
-		.addField("Slug", slug, true)
+		.addField("User", `${slug}\n<:Shout:680483855622340636> **Status:** ${targetBio.status || "None Provided"}\n<:Description:680483882688184355> **Description:** ${targetBio.description || "None Provided"}`, true)
 		.addField("Details", `<:Shout:680483855622340636> **Status:** ${targetBio.status || "None Provided"}\n<:Description:680483882688184355> **Description:** ${targetBio.description || "None Provided"}\n**Location:** ${targetBio.upvotes || "None Provided"}\n**Gender:** ${targetBio.gender || "None Provided"}\n**Birthday:** ${targetBio.birthday || "None Provided"}\n**Occupation:** ${targetBio.occupation || "None Provided"}\n**Email:** ${targetBio.email || "None Provided"}\n**Website:** ${targetBio.website || "None Provided"}`)
 		.addField("Statistics", `<:upvote:680483831769595961> **Upvotes:** ${targetBio.upvotes}\n<:View:680484522311155722> **View Count:** Unavailable`)
 		.addField("<:Link:680484762099646566> Connections", targetConnections)
