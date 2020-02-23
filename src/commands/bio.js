@@ -21,13 +21,13 @@ module.exports.run = async function(client, message, args) {
   let targetConnections = `GitHub: [${tconnections.github.name ||
     "Not Linked"}](https://github.com/${
     tconnections.github.name
-  }),\n Website: [${tconnections.website.name || "Not Linked"}](${
+  }),\nWebsite: [${tconnections.website.name || "Not Linked"}](${
     tconnections.website.name
-  }),\n Instagram: [${tconnections.instagram.name ||
+  }),\nInstagram: [${tconnections.instagram.name ||
     "Not Linked"}](https://instagram.com/${
     tconnections.instagram.name
-  }),\n Snapchat: ${tconnections.snapchat.name ||
-    "Not Linked"},\n LinkedIn: [${tconnections.linkedin.name ||
+  }),\nSnapchat: ${tconnections.snapchat.name ||
+    "Not Linked"}\n LinkedIn: [${tconnections.linkedin.name ||
     "Not Linked"}](https://linkedin.com/${tconnections.linkedin.name})`;
 
   let slug = `[${targetBio.name}](https://dsc.bio/${targetBio.name}/)`;
