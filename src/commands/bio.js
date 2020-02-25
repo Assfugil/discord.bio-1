@@ -26,8 +26,8 @@ module.exports.run = async function(client, message, args) {
   }),\nInstagram: [${tconnections.instagram.name ||
     "Not Linked"}](https://instagram.com/${
     tconnections.instagram.name
-  }),\nSnapchat: ${tconnections.snapchat.name ||
-    "Not Linked"}\n LinkedIn: [${tconnections.linkedin.name ||
+  }),\nSnapchat: [${tconnections.snapchat.name ||
+    "Not Linked"}](https://snapchat.com/add/${tconnections.snapchat.name})\n LinkedIn: [${tconnections.linkedin.name ||
     "Not Linked"}](https://linkedin.com/${tconnections.linkedin.name})`;
 
   let slug = `[${targetBio.name}](https://dsc.bio/${targetBio.name}/)`;
