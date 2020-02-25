@@ -8,7 +8,7 @@ module.exports.run = async function(client, message, args) {
   let target = args[0];
   if (!target) return message.channel.send("You must provide a slug to check.");
   let tBio = await bio.fetchUserDetails(target);
-  if (!tBio.success)
+  if (!tBio.success === 1)
     return message.channel.send(
       new RichEmbed()
         .setColor(Colors.SUCCESS)
