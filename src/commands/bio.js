@@ -32,7 +32,7 @@ module.exports.run = async function(client, message, args) {
 
   let slug = `[${targetBio.name}](https://dsc.bio/${targetBio.name}/)`;
   if (targetBio.verified === true) {
-    slug = +" <:booleanverified:680217203014238279>";
+    slug = ` ${slug}<:booleanverified:680217203014238279>`;
   }
 
   const embed = new RichEmbed()
@@ -47,7 +47,7 @@ module.exports.run = async function(client, message, args) {
     )
     .addField(
       ":information_source: Details",
-      `**Location:** ${targetBio.upvotes ||
+      `**Location:** ${targetBio.location ||
         "None Provided"}\n**Gender:** ${targetBio.gender ||
         "None Provided"}\n**Birthday:** ${targetBio.birthday ||
         "None Provided"}\n**Occupation:** ${targetBio.occupation ||
